@@ -13,7 +13,6 @@ object ScolorChooserMain {
   }
   
   def main(args : Array[String]) : Unit = {
-    println(new ColorComponent(246).value)
     buildMainWindow setVisible true
     return 0
   }
