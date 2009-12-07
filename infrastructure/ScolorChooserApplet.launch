@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.javaApplet">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/ScolorChooser"/>
+<listEntry value="/ScalaChooser"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>
@@ -10,7 +10,7 @@
 <stringAttribute key="org.eclipse.jdt.launching.APPLET_NAME" value=""/>
 <mapAttribute key="org.eclipse.jdt.launching.APPLET_PARAMETERS"/>
 <intAttribute key="org.eclipse.jdt.launching.APPLET_WIDTH" value="450"/>
-<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java-6-sun-1.6.0.16"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="de.miq.scolor.ScolorChooserApplet$"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ScolorChooser"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ScalaChooser"/>
 </launchConfiguration>
