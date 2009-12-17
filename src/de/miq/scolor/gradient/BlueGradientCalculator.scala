@@ -12,6 +12,7 @@ class BlueGradientCalculator extends GradientCalculator {
   }
   
   override def computeNewBaseColor(baseColor: Color, value: Int) : Color = {
+    require(value >= 0 && value < 256)
     new Color(baseColor.getRed, baseColor.getGreen, value)
   }
 }
