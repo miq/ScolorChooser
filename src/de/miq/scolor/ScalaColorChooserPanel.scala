@@ -18,6 +18,7 @@ class ScalaColorChooserPanel extends AbstractColorChooserPanel {
 		  new ColorComponentControl("R", new RedGradientCalculator(), 255, colorChangedCallback),
 		  new ColorComponentControl("G", new GreenGradientCalculator(), 255, colorChangedCallback),  
 		  new ColorComponentControl("B", new BlueGradientCalculator(), 255, colorChangedCallback))
+  val hexDisplay = new HexColorDisplay()
   val colorPanel = new JPanel
   
   override def getLargeDisplayIcon : Icon = {
@@ -35,6 +36,7 @@ class ScalaColorChooserPanel extends AbstractColorChooserPanel {
   def colorChangedCallback(newColor: Color) : Unit = {
     colorControls.foreach(cc => cc.color = newColor)
     colorPanel.setBackground(newColor)
+    hexDisplay.setColor(newColor)
   }
   
   override def buildChooser = {
@@ -46,7 +48,6 @@ class ScalaColorChooserPanel extends AbstractColorChooserPanel {
       add(cc.slider)
       add(cc.spinner, "wrap")
     })
-    val hexDisplay = new HexColorDisplay()
     add(hexDisplay, "spanx, growx")
     colorChangedCallback(Color.GREEN)
   }
