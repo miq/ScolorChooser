@@ -46,6 +46,8 @@ class ScalaColorChooserPanel extends AbstractColorChooserPanel {
       add(cc.slider)
       add(cc.spinner, "wrap")
     })
+    val hexDisplay = new HexColorDisplay()
+    add(hexDisplay, "spanx, growx")
     colorChangedCallback(Color.GREEN)
   }
   
