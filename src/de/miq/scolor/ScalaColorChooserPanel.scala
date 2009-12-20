@@ -41,11 +41,13 @@ class ScalaColorChooserPanel extends AbstractColorChooserPanel {
     setLayout(new MigLayout())
     colorPanel.setMinimumSize(100, 100)
     add(colorPanel, "spany, grow")
-    colorControls.foreach(cc => add(cc, "wrap"))
+    colorControls.foreach(cc => {
+      add(cc.labelRadio)
+      add(cc.slider)
+      add(cc.spinner, "wrap")
+    })
     colorChangedCallback(Color.GREEN)
   }
   
-  override def updateChooser = {
-    
-  }
+  override def updateChooser = {}
 }
