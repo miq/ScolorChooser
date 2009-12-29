@@ -7,7 +7,8 @@ import net.miginfocom.swing.MigLayout
 class HexColorDisplay extends JPanel(new MigLayout("insets 0")) {
   val label = new JLabel("HTML-Notation:")
   add(label)
-  val hexField = new JTextField()
+  val hexField = new JTextField(6)
+  hexField.setMaximumSize(hexField.getPreferredSize)
   hexField.setEditable(false)
   add(hexField, "width 100%")
 
@@ -17,8 +18,9 @@ class HexColorDisplay extends JPanel(new MigLayout("insets 0")) {
 
   private def leadingZeroHex(i: Int) : String = {
     if (i < 16) {
-      return "0" + i.toHexString
+      "0" + i.toHexString
+    } else {
+      i.toHexString
     }
-    i.toHexString
   }
 }
