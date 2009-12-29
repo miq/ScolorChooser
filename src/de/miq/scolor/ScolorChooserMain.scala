@@ -2,7 +2,6 @@ package de.miq.scolor
 
 import javax.swing._
 import java.awt.EventQueue
-import java.lang.Thread
 import org.jvnet.substance.skin.{SubstanceModerateLookAndFeel}
 
 object ScolorChooserMain {
