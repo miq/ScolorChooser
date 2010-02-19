@@ -5,6 +5,7 @@ import java.awt._
 import javax.swing._
 
 import de.miq.scolor.gradient.GradientCalculator
+import de.miq.scolor.SwingPredef._
 
 class GradientSlider(gradientCalculator: GradientCalculator, v: Int, min: Int, max: Int) extends JSlider(SwingConstants.HORIZONTAL, v, min, max) {
   private[this] var bc: Color = Color.WHITE
@@ -24,8 +25,9 @@ class GradientSlider(gradientCalculator: GradientCalculator, v: Int, min: Int, m
 }
 
 class GradientSliderUI(slider: GradientSlider, gradientCalculator : GradientCalculator) extends BasicSliderUI(slider) {
+
   override def paintThumb(g: Graphics) = {
-    val g2d = g.create.asInstanceOf[Graphics2D]
+    val g2d = g.create
     g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
     g2d.translate(thumbRect.x, thumbRect.y);
     val arrowHeight = thumbRect.height / 2 - 2
@@ -49,13 +51,13 @@ class GradientSliderUI(slider: GradientSlider, gradientCalculator : GradientCalc
 
   override def paintTrack(g: Graphics) = {
     super.paintTrack(g)
-    val g2d = g.create.asInstanceOf[Graphics2D]
+    val g2d = g.create
     g2d.translate(trackRect.x, trackRect.y);
-    g.setColor(Color.GREEN)
+    g2d.setColor(Color.GREEN)
     val gradientWidth = trackRect.width - 2
     for (x <- 0 to gradientWidth) {
-      g.setColor(gradientCalculator.computeColor(slider.baseColor, x, gradientWidth))
-      g.drawLine(x + getThumbSize.width / 2, 2, x + getThumbSize.width / 2, trackRect.height - 4)
+      g2d.setColor(gradientCalculator.computeColor(slider.baseColor, x, gradientWidth))
+      g2d.drawLine(x + getThumbSize.width / 2, 2, x + getThumbSize.width / 2, trackRect.height - 4)
     }
   }
 }
