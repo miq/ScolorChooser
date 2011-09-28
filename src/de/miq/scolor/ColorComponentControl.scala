@@ -3,8 +3,6 @@ package de.miq.scolor
 import javax.swing._
 import javax.swing.event.{ChangeEvent,ChangeListener}
 import java.awt._
-import java.awt.event.{ActionEvent}
-import scala.swing.Swing._
 
 import de.miq.scolor.gradient._
 
@@ -37,7 +35,7 @@ class ColorComponentControl(label: String, gradientCalculator: GradientCalculato
     slider.addChangeListener(notifier)
   }
 
-  def notifyColorChanged(value: Int) = {
+  def notifyColorChanged(value: Int) {
     val newColor = gradientCalculator.computeNewBaseColor(color, value)
     colorChanged(newColor)
   }

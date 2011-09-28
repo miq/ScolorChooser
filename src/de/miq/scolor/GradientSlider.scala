@@ -26,7 +26,7 @@ class GradientSlider(gradientCalculator: GradientCalculator, v: Int, min: Int, m
 
 class GradientSliderUI(slider: GradientSlider, gradientCalculator : GradientCalculator) extends BasicSliderUI(slider) {
 
-  override def paintThumb(g: Graphics) = {
+  override def paintThumb(g: Graphics) {
     val g2d = g.create
     g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
     g2d.translate(thumbRect.x, thumbRect.y);
@@ -45,19 +45,19 @@ class GradientSliderUI(slider: GradientSlider, gradientCalculator : GradientCalc
     g2d.fillPolygon(bottomTriangle)
   }
 
-  override def getThumbSize() : Dimension = {
-    return new Dimension(13, 18)
+  override def getThumbSize : Dimension = {
+    new Dimension(13, 18)
   }
 
-  override def paintTrack(g: Graphics) = {
-    super.paintTrack(g)
+  override def paintTrack(g: Graphics) {
     val g2d = g.create
-    g2d.translate(trackRect.x, trackRect.y);
+    super.paintTrack(g)
+	  g2d.translate(trackRect.x, trackRect.y);
     g2d.setColor(Color.GREEN)
-    val gradientWidth = trackRect.width - 2
+    val gradientWidth = trackRect.width
     for (x <- 0 to gradientWidth) {
       g2d.setColor(gradientCalculator.computeColor(slider.baseColor, x, gradientWidth))
-      g2d.drawLine(x + getThumbSize.width / 2, 2, x + getThumbSize.width / 2, trackRect.height - 4)
+      g2d.drawLine(x, 3, x, trackRect.height - 4)
     }
   }
 }

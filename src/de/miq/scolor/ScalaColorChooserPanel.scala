@@ -1,13 +1,11 @@
 package de.miq.scolor
 
-import java.awt.Color
 import javax.swing._
 import javax.swing.colorchooser._
-import javax.swing.event._
 import net.miginfocom.swing.MigLayout
-import scala.swing.Swing._
 
 import de.miq.scolor.gradient._
+import java.awt.{Dimension, Color}
 
 class ScalaColorChooserPanel extends AbstractColorChooserPanel {
   private val colorControls = List(
@@ -21,26 +19,26 @@ class ScalaColorChooserPanel extends AbstractColorChooserPanel {
   private val colorPanel = new JPanel
 
   override def getLargeDisplayIcon: Icon = {
-    return null
+    null
   }
 
   override def getSmallDisplayIcon: Icon = {
-    return null
+    null
   }
 
   override def getDisplayName: String = {
-    return "Scala Mighty"
+    "Scala Mighty"
   }
 
-  private def colorChangedCallback(newColor: Color): Unit = {
+  private def colorChangedCallback(newColor: Color) {
     colorControls.foreach(cc => cc.color = newColor)
     colorPanel.setBackground(newColor)
     hexDisplay.setColor(newColor)
   }
 
-  override def buildChooser = {
+  override def buildChooser() {
     setLayout(new MigLayout())
-    colorPanel.setMinimumSize(100, 100)
+    colorPanel.setMinimumSize(new Dimension(100, 100))
     add(colorPanel, "spany, height 60%, aligny center")
     colorControls.foreach(cc => {
       add(cc.labelRadio)
@@ -51,5 +49,5 @@ class ScalaColorChooserPanel extends AbstractColorChooserPanel {
     colorChangedCallback(Color.GREEN)
   }
 
-  override def updateChooser = {}
+  override def updateChooser() {}
 }

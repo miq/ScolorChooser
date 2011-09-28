@@ -8,7 +8,7 @@ trait HSBCalculator extends GradientCalculator {
   protected def componentRange: Int
 
   def computeComponent(baseColor: Color) : Int = {
-    Math.round(getComponents(baseColor)(componentIndex) * componentRange)
+    math.round(getComponents(baseColor)(componentIndex) * componentRange)
   }
 
   protected final def getComponents(c: Color) : Array[Float] = {

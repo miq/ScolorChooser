@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="libs">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/scalatest-1.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/junit-4.8.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/miglayout-3.7.1-swing.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/substance-lite-5.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/scalatest-1.6.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -12,7 +12,7 @@ class HexColorDisplay extends JPanel(new MigLayout("insets 0")) {
   hexField.setEditable(false)
   add(hexField, "width 100%")
 
-  def setColor(c: Color) = {
+  def setColor(c: Color) {
     hexField.setText(leadingZeroHex(c.getRed) + leadingZeroHex(c.getGreen) + leadingZeroHex(c.getBlue))
   }
 
