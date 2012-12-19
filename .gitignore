@@ -2,3 +2,6 @@ build/
 target/
 out/
 
+.idea/
+.gradle/
+gradle-app.setting
