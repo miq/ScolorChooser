@@ -1,8 +1,11 @@
 apply plugin: 'scala'
 
-repositories {
-    mavenRepo urls: 'http://scala-tools.org/repo-releases'
-    mavenCentral()
+compileScala {
+    scalaCompileOptions.useCompileDaemon = true
+}
+
+tasks.withType(ScalaCompile) {
+    scalaCompileOptions.useAnt = false
 }
 
 dependencies {
@@ -13,3 +16,9 @@ dependencies {
     testCompile 'org.scalatest:scalatest_2.9.0:1.8'
     testCompile 'junit:junit:4.10'
 }
+
+repositories {
+    mavenRepo urls: 'http://scala-tools.org/repo-releases'
+    mavenCentral()
+}
+
