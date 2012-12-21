@@ -4,7 +4,7 @@ import java.awt.Color
 
 class BrightnessGradientCalculator extends HSBCalculator {
   override val componentIndex = 2
-  override val componentRange = 100
+  override val componentRange = 100f
 
   override def computeColor(baseColor: Color, pos: Int, width: Int) : Color = {
     val hsb = getComponents(baseColor)
@@ -13,6 +13,6 @@ class BrightnessGradientCalculator extends HSBCalculator {
 
   override def computeNewBaseColor(baseColor: Color, value: Int) : Color = {
     val hsb = getComponents(baseColor)
-    Color.getHSBColor(hsb(0), hsb(1), value / componentRange.asInstanceOf[Float])
+    Color.getHSBColor(hsb(0), hsb(1), value / componentRange)
   }
 }

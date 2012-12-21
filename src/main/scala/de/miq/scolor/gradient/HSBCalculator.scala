@@ -5,7 +5,7 @@ import java.awt.Color
 
 trait HSBCalculator extends GradientCalculator {
   protected def componentIndex: Int
-  protected def componentRange: Int
+  protected def componentRange: Float
 
   def computeComponent(baseColor: Color) : Int = {
     math.round(getComponents(baseColor)(componentIndex) * componentRange)

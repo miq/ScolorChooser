@@ -14,7 +14,8 @@ class ScalaColorChooserPanel extends AbstractColorChooserPanel {
     new ColorComponentControl("B", new BrightnessGradientCalculator(), 100, colorChangedCallback),
     new ColorComponentControl("R", new RedGradientCalculator(), 255, colorChangedCallback),
     new ColorComponentControl("G", new GreenGradientCalculator(), 255, colorChangedCallback),
-    new ColorComponentControl("B", new BlueGradientCalculator(), 255, colorChangedCallback))
+    new ColorComponentControl("B", new BlueGradientCalculator(), 255, colorChangedCallback)
+  )
   private val hexDisplay = new HexColorDisplay()
   private val colorPanel = new JPanel
 
@@ -27,11 +28,11 @@ class ScalaColorChooserPanel extends AbstractColorChooserPanel {
   }
 
   override def getDisplayName: String = {
-    "Scala Mighty"
+    "Scala GIMPy"
   }
 
   private def colorChangedCallback(newColor: Color) {
-    colorControls.foreach(cc => cc.color = newColor)
+    colorControls.foreach(colorControl => colorControl.color = newColor)
     colorPanel.setBackground(newColor)
     hexDisplay.setColor(newColor)
   }
