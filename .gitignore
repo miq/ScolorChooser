@@ -1,8 +1,8 @@
-build/
-target/
-out/
-
-.idea/
-.gradle/
-gradle-app.setting
+/build/
+/target/
+/out/
+/.idea/
+/.gradle/
+/gradle-app.setting
 *.iml
+/test-results/
