@@ -9,7 +9,7 @@ object ScolorChooserMain {
     val mainWindow = new JFrame("Scala Custom Color Chooser")
     mainWindow.setSize(500, 300)
     mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE)
-    mainWindow.getContentPane.add(new ScolorChooser());
+    mainWindow.getContentPane.add(new ScolorChooser())
     mainWindow
   }
 

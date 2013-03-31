@@ -29,7 +29,7 @@ class GradientSliderUI(slider: GradientSlider, gradientCalculator : GradientCalc
   override def paintThumb(g: Graphics) {
     val g2d = g.create
     g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
-    g2d.translate(thumbRect.x, thumbRect.y);
+    g2d.translate(thumbRect.x, thumbRect.y)
     val arrowHeight = thumbRect.height / 2 - 2
     val topTriangle = new Polygon()
     topTriangle.addPoint(0, 1)
@@ -52,7 +52,7 @@ class GradientSliderUI(slider: GradientSlider, gradientCalculator : GradientCalc
   override def paintTrack(g: Graphics) {
     val g2d = g.create
     super.paintTrack(g)
-	  g2d.translate(trackRect.x, trackRect.y);
+    g2d.translate(trackRect.x, trackRect.y)
     g2d.setColor(Color.GREEN)
     val gradientWidth = trackRect.width
     for (x <- 0 to gradientWidth) {
