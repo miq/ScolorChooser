@@ -18,7 +18,7 @@ class BlueGradientCalculatorTest extends FunSuite with ShouldMatchers {
     new BlueGradientCalculator().computeColor(new Color(200, 175, 78), 400, 400) should be (new Color(200, 175, 255))
   }
 
-  test ("illegal base color component") {
+  test ("base color component out of range") {
     intercept[IllegalArgumentException] {
       new BlueGradientCalculator().computeNewBaseColor(Color.RED, -1)
     }
